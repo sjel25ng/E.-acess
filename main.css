@@ -1,0 +1,89 @@
+.main-header {
+	display: flex; /*loggan hamnar till vänster, menyn mitten och varukorg höger*/
+	justify-content: space-between; 
+	align-items: center; 
+	padding: 25px 10%; 
+	background-color: #f5f1ea; /*ljus beige*/
+	position: sticky; /*gör att header stannar högst upp när man skrollar*/
+	top: 0; 
+	z-index: 1000; 
+}
+.logo h1 { /*logga med text*/
+	font-family: 'Playfair Display', serif;
+	font-size: 1.8rem; 
+	letter-spacing: 2px; 
+	text-transform: uppercase;
+	margin: 0; 
+}
+.nav-links {
+	display:flex;
+	gap: 40px;
+}
+.nav-links a {
+	text-decoration: none; 
+	color: #5C3A32; /*mörkbrun text*/
+	font-family: 'Playfair Display', serif;
+	font-size: 1.1rem; 
+	transition: color 0.3s ease; /*smooth hover-effekt*/
+}
+.nav-links a:hover {
+	color: #c9a227; /*guldig hover*/
+}
+.cart-icon {
+	font-size: 1.3rem; 
+	cursor: pointer; /*clicker som blir en hand när man klickar*/
+}
+
+.hero {
+	display: grid; 
+	grid-template-columns: 2fr 1fr;
+	gap: 40px;
+	padding: 80px 10%;
+	background-color: #E8DCCB; /*ljusare beige än headern*/
+}
+/*Stor huvudbild*/
+.hero-main {	
+position: relative;
+}
+.hero-main img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 20px;
+}
+/*text ovanpå bild*/
+.hero-overlay {
+	position: absolute;
+	bottom: 40px;
+	left: 40px;
+	color: #5C3A32; /*mörkbrun text*/
+}
+.hero-fullwidth .fullwidth-overlay {
+	position: relative;
+	bottom: 80px;
+	left: 80px;
+	color: #5C3A32; /*mörkbrun text*/
+}
+.hero-overlay h2 {
+	font-family: 'Playfair Display', serif;
+	font-size: 3rem;
+	letter-spacing: 3px;
+	margin: 0;
+}
+/*sidobilder*/
+.hero-side {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+.hero-side img {
+	width: 100%;
+	border-radius: 20px;
+	object-fit: cover;
+}
+/*bild full bredd*/
+.hero-fullwidth img {
+	width: 100%;
+	border-radius: 20px;
+	margin-top: 60px;
+}
