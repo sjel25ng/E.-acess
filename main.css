@@ -8,6 +8,7 @@
 	top: 0; 
 	z-index: 1000; 
 }
+
 .logo h1 { /*logga med text*/
 	font-family: 'Playfair Display', serif;
 	font-size: 1.8rem; 
@@ -15,10 +16,12 @@
 	text-transform: uppercase;
 	margin: 0; 
 }
+
 .nav-links {
 	display:flex;
 	gap: 40px;
 }
+
 .nav-links a {
 	text-decoration: none; 
 	color: #5C3A32; /*mörkbrun text*/
@@ -26,9 +29,11 @@
 	font-size: 1.1rem; 
 	transition: color 0.3s ease; /*smooth hover-effekt*/
 }
+
 .nav-links a:hover {
 	color: #c9a227; /*guldig hover*/
 }
+
 .cart-icon {
 	font-size: 1.3rem; 
 	cursor: pointer; /*clicker som blir en hand när man klickar*/
@@ -41,16 +46,19 @@
 	padding: 80px 10%;
 	background-color: #E8DCCB; /*ljusare beige än headern*/
 }
+
 /*Stor huvudbild*/
 .hero-main {	
 position: relative;
 }
+
 .hero-main img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	border-radius: 20px;
 }
+
 /*text ovanpå bild*/
 .hero-overlay {
 	position: absolute;
@@ -58,32 +66,82 @@ position: relative;
 	left: 40px;
 	color: #5C3A32; /*mörkbrun text*/
 }
+
 .hero-fullwidth .fullwidth-overlay {
 	position: relative;
 	bottom: 80px;
 	left: 80px;
 	color: #5C3A32; /*mörkbrun text*/
 }
+
 .hero-overlay h2 {
 	font-family: 'Playfair Display', serif;
 	font-size: 3rem;
 	letter-spacing: 3px;
 	margin: 0;
 }
+
 /*sidobilder*/
 .hero-side {
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
 }
+
 .hero-side img {
 	width: 100%;
 	border-radius: 20px;
 	object-fit: cover;
 }
+
 /*bild full bredd*/
 .hero-fullwidth img {
 	width: 100%;
 	border-radius: 20px;
 	margin-top: 60px;
+}
+
+/*trending page*/
+.trending-page {
+	padding: 120px 10%;
+	background-color: f5f1ea;
+}
+
+/*grid med 3 kolumner för trenderna*/
+.trending-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+}
+
+/*trendkort*/
+.trend-card {
+	position: relative;
+	overflow: hidden;
+	border-radius: 20px;
+cursor: pointer;
+}
+
+.trend-card img {
+	Width: 100%;
+	Height: 400px;
+	Object-fit: cover;
+	Transition: 0.6s ease;
+}
+
+/*hover-effekt på trendkortet*/
+.trend-card:hover img {
+	Transform: scale(1.05);
+}
+
+/*text över trendkortet*/
+.trend-overlay {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.4);
+	color: white;
+	font-size: 1.2rem;
+	text-align: center;
 }
