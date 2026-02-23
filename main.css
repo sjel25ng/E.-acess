@@ -196,11 +196,13 @@ cursor: pointer;
 
 /*product grid på product page*/
 .product-grid {
-  	display: grid;
-  	grid-template-columns: repeat(3, 1fr);
-  	gap: 25px;
-  	padding: 0 10%;
-}
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  gap: 25px;
+  padding: 0 10%;
+  height: 800px; /* viktigt */
+} 
 
 .product {
   	position: relative;
@@ -220,9 +222,9 @@ cursor: pointer;
   	transform: scale(1.05);
 }
 
-.large {
-  	grid-column: span 1;
-  	grid-row: span 2;
+.product-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
 }
 
 /*text över produktbilderna*/
