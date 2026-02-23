@@ -21,3 +21,15 @@ document.querySelectorAll(".slider").forEach(slider => {
 
 })
 
+//Cart
+let cartCount = 0;
+const cartDisplay = document.getElementById("cart-count");
+document.querySelectorAll(".add-to-cart").forEach(button => {
+	button.addEventListener("click", () => {
+		cartCount++;
+		if(cartDisplay){
+			cartDisplay.textContent = cartCount;
+		}
+	});
+});	
+
