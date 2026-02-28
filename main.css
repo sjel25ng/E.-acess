@@ -195,14 +195,12 @@ cursor: pointer;
 }
 
 /*product grid på product page*/
-.product-grid {
+.products-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  gap: 25px;
-  padding: 0 10%;
-  height: 800px; /* viktigt */
-} 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 60px 10%;
+}
 
 .product {
   	position: relative;
@@ -251,4 +249,30 @@ cursor: pointer;
 .cart-total {
   margin-top: 40px;
   font-size: 1.5rem;
+}
+
+.checkout-button {
+  padding: 15px 40px;
+  background-color: #c9a227;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkout-button:hover {
+  background-color: #a17f1f;
+}
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
 }
