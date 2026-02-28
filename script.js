@@ -8,13 +8,15 @@ document.querySelectorAll(".slider").forEach(slider => {
 	
 	next.addEventListener("click", () => {
 		index++;
-		if(index > 2) index = 0;
+		const totalSlides = slider.querySelectorAll(".slide").length;
+
+		if(index >= totalSlides) index = 0;
 		slides.style.transform = `translateX(-${index * 100}%)`;
 	});
 	
 	prev.addEventListener("click", () => {
 		index--;
-		if(index < 0) index = 2;
+		if(index < 0) index = totalSlides - 1;
 		slides.style.transform = `translateX(-${index * 100}%)`;
 	});
 });
@@ -30,14 +32,44 @@ function updateCart() {
 }
 
 document.querySelectorAll(".add-to-cart").forEach(button => {
- 	button.addEventListener("click", () => {
-    		const product = {
-      			name: "Elegant Pearl Necklace",
-      			price: 189.99
-    		};
+    button.addEventListener("click", (e) => {
 
-    		cart.push(product);
-    		updateCart();
-  	});
+        const card = e.target.closest(".product-card");
+
+        const name = card.querySelector("h3").textContent;
+        const price = card.querySelector("p").textContent.replace("$", "");
+
+        const product = {
+            name: name,
+            price: parseFloat(price)
+        };
+
+        cart.push(product);
+        updateCart();
+    });
 });
 
+function displayCart() {
+    const cartItemsContainer = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+
+    if (!cartItemsContainer) return;
+
+    cartItemsContainer.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+            <p>${item.name} - $${item.price}</p>
+        `;
+        cartItemsContainer.appendChild(div);
+
+        total += item.price;
+    });
+
+    cartTotal.textContent = total.toFixed(2);
+}
+
+displayCart();
+updateCart();
