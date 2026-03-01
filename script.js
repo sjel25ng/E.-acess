@@ -1,24 +1,24 @@
-//Slider function
-document.querySelectorAll(".slider").forEach(slider => {
-	const slides = slider.querySelector(".slides");
-	const prev = slider.querySelector(".prev");
-	const next = slider.querySelector(".next");
-	
-	let index = 0;
-	
-	next.addEventListener("click", () => {
-		index++;
-		const totalSlides = slider.querySelectorAll(".slide").length;
+const slides = document.querySelector('.slides');
+const slide = document.querySelectorAll('.slide');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
 
-		if(index >= totalSlides) index = 0;
-		slides.style.transform = `translateX(-${index * 100}%)`;
-	});
-	
-	prev.addEventListener("click", () => {
-		index--;
-		if(index < 0) index = totalSlides - 1;
-		slides.style.transform = `translateX(-${index * 100}%)`;
-	});
+let index = 0;
+
+function updateSlide() {
+  slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+next.addEventListener('click', () => {
+  index++;
+  if (index >= slide.length) index = 0;
+  updateSlide();
+});
+
+prev.addEventListener('click', () => {
+  index--;
+  if (index < 0) index = slide.length - 1;
+  updateSlide();
 });
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 

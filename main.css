@@ -1,25 +1,27 @@
 .main-header {
 	display: flex; /*loggan hamnar till vänster, menyn mitten och varukorg höger*/
-	justify-content: space-between; 
-	align-items: center; 
-	padding: 25px 10%; 
-	background-color: #f5f1ea; /*ljus beige*/
+	justify-content: space-between; /*skapar utrymme mellan elementen i headern*/
+	align-items: center; /*vertikal centrering av headerns innehåll*/
+	padding: 25px 10%;
+	background-color: #E8DCCB; /*ljus beige*/
 	position: sticky; /*gör att header stannar högst upp när man skrollar*/
-	top: 0; 
-	z-index: 1000; 
+	top: 0; /*positionerar headern högst upp*/
+	z-index: 1000; /*ser till att headern ligger över annat innehåll när man skrollar*/
 }
 
 .logo h1 { /*logga med text*/
 	font-family: 'Playfair Display', serif;
-	font-size: 1.8rem; 
-	letter-spacing: 2px; 
-	text-transform: uppercase;
-	margin: 0; 
+	font-size: 1.6rem; /*storlek på logga texten*/
+	letter-spacing: 1px; /*avstånd mellan bokstäverna i logga texten*/
+	color: #5C3A32; /*mörkbrun text*/
+	text-transform: uppercase; 
+	margin: 1; /*tar bort standardmarginalen från h1-elementet*/
+	position: relative; /*för att kunna placera texten ovanpå bilden*/
 }
 
 .nav-links {
-	display:flex;
-	gap: 40px;
+	display:flex; /*skapar en horisontell meny*/
+	gap: 20px; /*skapar utrymme mellan varje menyval*/
 }
 
 .nav-links a {
@@ -40,122 +42,141 @@
 }
 
 .logo img {
-  height: 50px;
-  width: auto;
-  display: block;
-}
-
-.logo a {
-  display: flex;
-  align-items: center;
+  height: 100px; /*justerar loggans höjd, behåller proportionerna*/
+  width: auto; /*bredden anpassas automatiskt för att behålla bildens proportioner*/
+  display: block; /*tar bort eventuella extra utrymmen under bilden som kan uppstå med inline-element*/
+  position: absolute; /*för att kunna placera texten ovanpå bilden*/
+  top: 50%; /*vertikal centrering*/
+  left: 17%; /*horisontell centrering*/
+  transform: translate(-50%, -50%); /*justerar positionen så att text
+en är exakt centrerad över bilden*/
 }
 
 .hero {
-	display: grid; 
-	grid-template-columns: 2fr 1fr;
-	gap: 40px;
-	padding: 80px 10%;
-	background-color: #E8DCCB; /*ljusare beige än headern*/
+	display: grid; /*skapar en grid-layout för hero-sektionen*/
+	grid-template-columns: 2fr 1fr; /*huvudbilden tar upp mer plats än sidobilderna*/
+	gap: 40px; /*skapar utrymme mellan huvudbilden och sidobilderna*/
+	padding: 80px 10%; /*skapar utrymme runt hero-sektionen*/
+	background-color: #f5f1ea; 
 }
 
 /*Stor huvudbild*/
 .hero-main {	
-position: relative;
+position: relative; /*för att kunna placera texten ovanpå bilden*/
 }
 
 .hero-main img {
-	width: 100%;
+	width: 100%; /*bilden tar upp hela bredden av sin container*/
 	height: 100%;
-	object-fit: cover;
-	border-radius: 20px;
+	object-fit: cover; /*ser till att bilden täcker hela området utan att förvrängas*/
+	border-radius: 20px; /*ger rundade hörn på bilden*/
 }
 
 /*text ovanpå bild*/
 .hero-overlay {
-	position: absolute;
-	bottom: 40px;
+	position: absolute; /*för att placera texten ovanpå bilden*/
+	bottom: 40px; /*placerar texten 40px från botten av bilden*/
 	left: 40px;
 	color: #5C3A32; /*mörkbrun text*/
 }
 
 .hero-fullwidth .fullwidth-overlay {
-	position: relative;
-	bottom: 80px;
-	left: 80px;
-	color: #5C3A32; /*mörkbrun text*/
+	position: relative; /*för att kunna placera texten ovanpå bilden*/
+	bottom: 200px; /*placerar texten 80px från botten av bilden*/
+	left: 100px;
+	font-size: 2rem;
+	color: #5C3A32; /*ljus beige text*/
 }
 
-.hero-overlay h2 {
+.hero-overlay h2 { /*stil för texten ovanpå huvudbilden*/
 	font-family: 'Playfair Display', serif;
-	font-size: 4rem;
+	font-size: 2.5rem;
 	letter-spacing: 3px;
-	margin: 0;
+	margin: 0; /*tar bort standardmarginalen från h2-elementet*/
 }
-
 /*sidobilder*/
 .hero-side {
-	display: flex;
-	flex-direction: column;
-	gap: 40px;
+	display: flex; /*skapar en flexbox-layout för sidobilderna*/
+	flex-direction: column; /*staplar sidobilderna vertikalt*/
+	gap: 40px; /*skapar utrymme mellan de två sidobilderna*/
 }
-
 .hero-side img {
 	width: 100%;
-	border-radius: 20px;
-	object-fit: cover;
+	border-radius: 20px; /*ger rundade hörn på sidobilderna*/
+	object-fit: cover; /*ser till att bilderna täcker hela området utan att förvrängas*/
 }
 
 /*bild full bredd*/
 .hero-fullwidth img {
-	width: 100%;
-	border-radius: 20px;
-	margin-top: 60px;
+	width: 80%; /*bilden tar upp hela bredden av sin container*/
+	height: 700px; /*sätter en fast höjd på bilden*/
+	image-orientation: center; /*centrerar bilden vertikalt inom sin container*/
+	object-fit: cover; /*ser till att bilden täcker hela området utan att förvrängas*/
+	margin-top: 0px; /*skapar utrymme mellan den fullbreddiga bilden och de andra bilderna i hero-sektionen*/
+	padding: 80px 10%; /*skapar utrymme runt hero-sektionen*/
+	background-color: #f5f1ea; 
 }
 
-/*trending page*/
-.trending-page {
-	padding: 120px 10%;
-	background-color: #f5f1ea;
+
+
+.trending-section {
+  padding: 120px 10%;
+  background: #f5f1ea;
+  text-align: center;
 }
 
-/*grid med 3 kolumner för trenderna*/
-.trending-grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 40px;
+.slider {
+  position: relative;
+  overflow: hidden;
 }
 
-/*trendkort*/
-.trend-card {
-	position: relative;
-	overflow: hidden;
-	border-radius: 20px;
-cursor: pointer;
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
 }
 
-.trend-card img {
-	width: 100%;
-	height: 400px;
-	object-fit: cover;
-	transition: 0.6s ease;
+.slide {
+  min-width: 100%;
+  position: relative;
 }
 
-/*hover-effekt på trendkortet*/
-.trend-card:hover img {
-	transform: scale(1.05);
+.slide img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
-/*text över trendkortet*/
-.trend-overlay {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	padding: 20px;
-	background: rgba(0, 0, 0, 0.4);
-	color: white;
-	font-size: 1.2rem;
-	text-align: center;
+.slide-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #c9a227;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+  background: #a17f1f;
+}
+
 
 /*product page*/
 .product-container {
@@ -190,6 +211,38 @@ cursor: pointer;
   	transition: 0.3s;
 }
 
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 120px 10%;
+  align-items: start;
+}
+
+/* Bild-grid */
+.product-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.product-gallery img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Produkttext */
+.product-details h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 1.8rem;
+  margin: 30px 0;
+  font-weight: bold;
+}
 .add-to-cart:hover {
   	background-color: #a17f1f;
 }
@@ -266,13 +319,25 @@ cursor: pointer;
 }
 
 @media (max-width: 900px) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+
+  .product-gallery {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 600px) {
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
+.pinterest-button,
+.pin-it-button,
+[class*="pinterest"] {
+  display: none !important;
+}
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
 }
