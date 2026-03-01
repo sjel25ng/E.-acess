@@ -1,3 +1,6 @@
+
+/*main.css*/
+
 .main-header {
 	display: flex; /*loggan hamnar till vänster, menyn mitten och varukorg höger*/
 	justify-content: space-between; /*skapar utrymme mellan elementen i headern*/
@@ -117,61 +120,69 @@ position: relative; /*för att kunna placera texten ovanpå bilden*/
 	background-color: #f5f1ea; 
 }
 
-
+/*trending page*/
 
 .trending-section {
-  padding: 120px 10%;
+  padding: 120px 10%; /*skapar utrymme runt sektionen*/
   background: #f5f1ea;
-  text-align: center;
+  text-align: center; /*centrerar texten i sektionen*/
+}
+
+.section-title {
+  font-size: 3rem;
+  color: #5C3A32;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 40px; /*skapar utrymme mellan titeln och innehållet i sektionen*/
 }
 
 .slider {
-  position: relative;
-  overflow: hidden;
+  position: relative; 
+  overflow: hidden; /*ser till att bara en bild visas i taget*/
 }
 
 .slides {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease; /*smooth övergång mellan bilderna*/
 }
 
 .slide {
-  min-width: 100%;
-  position: relative;
+  min-width: 100%; /*varje bild tar upp hela bredden av slider-container*/
+  position: relative; /*för att kunna placera texten ovanpå bilden*/
 }
 
 .slide img {
   width: 100%;
   border-radius: 20px;
-  object-fit: cover;
+  object-fit: cover; /*ser till att bilden täcker hela området utan att förvrängas*/
 }
 
 .slide-caption {
   position: absolute;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.4);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
+  transform: translateX(-50%); /*centrerar texten horisontellt*/
+  background: white;
+  color: #5C3A32;
+  font-family: 'Playfair Display', serif;
+  padding: 10px 20px; /*skapar utrymme runt texten i caption*/
+  border-radius: 10px; /*ger rundade hörn på caption*/
 }
 
 .prev, .next {
-  position: absolute;
-  top: 50%;
+  position: absolute; /*för att placera knapparna ovanpå slider-container*/
+  top: 50%; /*vertikal centrering av knapparna*/
   transform: translateY(-50%);
   background: #c9a227;
   color: white;
-  border: none;
-  font-size: 24px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
+  border: none; /*tar bort standardstilen på knapparna*/
+  font-size: 24px; /*storlek på pilikonerna*/
+  padding: 10px 15px; /*skapar utrymme runt pilikonerna*/
+  cursor: pointer; /*clicker som blir en hand	när man klickar*/	
+  border-radius: 50%; /*ger knapparna en cirkulär form*/
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 10px; } /*placerar vänsterknappen 10px från vänsterkanten av slider-container*/
+.next { right: 10px; } /*placerar högerknappen 10px från högerkanten av slider-container*/
 
 .prev:hover, .next:hover {
   background: #a17f1f;
@@ -288,6 +299,9 @@ position: relative; /*för att kunna placera texten ovanpå bilden*/
   	padding: 20px;
   	text-align: center;
 }
+
+
+
 
 /*cart page*/
 .cart-page {
