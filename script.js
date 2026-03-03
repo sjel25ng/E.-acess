@@ -20,6 +20,7 @@ prev.addEventListener('click', () => {
   if (index < 0) index = slide.length - 1;
   updateSlide();
 });
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function updateCart() {
