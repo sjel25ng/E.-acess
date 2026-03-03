@@ -188,28 +188,45 @@ position: relative; /*för att kunna placera texten ovanpå bilden*/
   background: #a17f1f;
 }
 
-.products-container {
+.products-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  padding: 120px 10%;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 60px 10%;
 }
 
-/* Bild-grid */
-.products-gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.products-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.products-image img {
-  	width: 500px;
-  	border-radius: 20px;
+/*text över produktbilderna*/
+.products-card .overlay {
+  	position: absolute; /*för att placera texten ovanpå bilden*/
+  	bottom: 0; /*placerar texten längst ner på bilden*/
+  	left: 0;
+  	width: 100%;
+  	color: #5C3A32; /*mörkbrun text*/
+  	padding: 20px; /*skapar utrymme runt texten i overlayen*/
+  	
+	text-align: center;
+	display: flex; /*för att centrera texten både vertikalt och horisontellt*/
+	flex-direction: column; /*staplar texten vertikalt*/
+	justify-content: flex-end; /*vertikal centrering av texten*/
+	opacity: 0; /*gör overlayen osynlig som standard*/
+	text-align: center; /*centrerar texten i overlayen*/
+	transition: opacity 0.3s ease; /*smooth hover-effekt*/
+	padding: 20px; /*skapar utrymme runt texten i overlayen*/
 }
 
-.products-details h1 {
+.section-title{
+	display: flex; /*gör att h1 tar upp hela raden och inte delar utrymme med andra element*/
  	font-size: 2.5rem;
+	color: #5C3A32;
+  	font-family: 'Playfair Display', serif;
+  	margin-bottom: 5px;
+	justify-content: center; /*justerar titeln till mitten av sin grid-cell*/	
 }
 
 .price {
@@ -219,70 +236,40 @@ position: relative; /*för att kunna placera texten ovanpå bilden*/
 
 /*add to cart knapp*/
 .add-to-cart {
-  	padding: 15px 40px;
+  	width: 80%; /*knappen tar upp 80% av bredden på overlayen*/
+	padding: 15px; /*skapar utrymme runt texten i knappen*/
   	background-color: #c9a227;
-  	border: none;
-  	color: white;
-  	font-size: 1rem;
-  	cursor: pointer;
-  	transition: 0.3s;
-}
-
-.products-gallery img {
-  width: 100%;
-  height: 300px;
-  border-radius: 20px;
-  object-fit: cover;
+  	border: none; /*tar bort standardstilen på knappen*/
+  	border-radius: 8px; /*ger knappen rundade hörn*/
+	color: white; /*textfärg i knappen*/
+  	font-size: 1.1rem; /*storlek på texten i knappen*/
+  	cursor: pointer; /*clicker som blir en hand när man klickar*/
+  	transition: 0.3s; /*smooth hover-effekt*/
+	margin-top: 15px; /*skapar utrymme mellan priset och knappen*/
 }
 
 .add-to-cart:hover {
   	background-color: #a17f1f;
 }
 
-/*product grid på product page*/
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  padding: 60px 10%;
-}
-
 .products-card {
-  	position: relative;
-  	overflow: hidden;
-  	border-radius: 15px;
+  	position: relative; /*för att kunna placera texten ovanpå bilden*/
+  	border-radius: 15px; /*ger rundade hörn på produktkortet*/
+  	overflow: hidden; /*ser till att innehållet i kortet inte går utanför de rundade hörnen*/
+  	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*ger en subtil skugga till kortet för att skapa djup*/
 }
 
 .products-card img {
-  	width: 100%;
-  	height: 100%;
-  	object-fit: cover;
-  	transition: 0.6s ease;
+  	width: 100%; /*bilden tar upp hela bredden av sin container*/
+  	height: 300px; /*sätter en fast höjd på bilden för att skapa en enhetlig layout*/
+  	object-fit: cover; /*ser till att bilden täcker hela området utan att förvrängas*/
+  	transition: 0.6s ease; /*smooth hover-effekt*/
 }
 
 /*hover-effekt på produktbilderna*/
 .products-card:hover img {
   	transform: scale(1.05);
 }
-
-.products-grid {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-}
-
-/*text över produktbilderna*/
-.products-overlay {
-  	position: absolute;
-  	bottom: 0;
-  	width: 100%;
-  	background: rgba(0,0,0,0.4);
-  	color: white;
-  	padding: 20px;
-  	text-align: center;
-}
-
-
-
 
 /*cart page*/
 .cart-page {
