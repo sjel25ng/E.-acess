@@ -1,225 +1,217 @@
-
-/*main.css*/
-
 .main-header {
-	display: flex; /*loggan hamnar till vänster, menyn mitten och varukorg höger*/
-	justify-content: space-between; /*skapar utrymme mellan elementen i headern*/
-	align-items: center; /*vertikal centrering av headerns innehåll*/
-	padding: 25px 10%;
-	background-color: #E8DCCB; /*ljus beige*/
-	position: sticky; /*gör att header stannar högst upp när man skrollar*/
-	top: 0; /*positionerar headern högst upp*/
-	z-index: 1000; /*ser till att headern ligger över annat innehåll när man skrollar*/
+	display: flex; /*flexbox-layout for header*/
+	justify-content: space-between; /*space between elements in header*/
+	align-items: center;
+	padding: 5% 10%; /*skapar utrymme runt headerns innehåll*/
+	background-color: #E8DCCB;
+	position: sticky; /*header stays at the top of the page when scrolling*/
+	top: 0; /*position header at the top of the page*/
+	z-index: 100%; 
 }
 
-.logo h1 { /*logga med text*/
+.logo h1 {
 	font-family: 'Playfair Display', serif;
-	font-size: 1.6rem; /*storlek på logga texten*/
-	letter-spacing: 1px; /*avstånd mellan bokstäverna i logga texten*/
-	color: #5C3A32; /*mörkbrun text*/
+	font-size: 1.6rem; 
+	letter-spacing: 10%;
+	color: #5C3A32;
 	text-transform: uppercase; 
-	margin: 1; /*tar bort standardmarginalen från h1-elementet*/
-	position: relative; /*för att kunna placera texten ovanpå bilden*/
+	margin: 1; /*remove default margin from h1 element*/
+	position: relative; /*place text relative to the logo container*/
 }
 
 .nav-links {
-	display:flex; /*skapar en horisontell meny*/
-	gap: 20px; /*skapar utrymme mellan varje menyval*/
+	display:flex;
+	gap: 5%; 
 }
 
 .nav-links a {
 	text-decoration: none; 
-	color: #5C3A32; /*mörkbrun text*/
+	color: #5C3A32;
 	font-family: 'Playfair Display', serif;
 	font-size: 1.1rem; 
 	transition: color 0.3s ease; /*smooth hover-effekt*/
 }
 
 .nav-links a:hover {
-	color: #c9a227; /*guldig hover*/
+	color: #c9a227;
 }
 
 .cart-icon {
 	font-size: 1.3rem; 
-	cursor: pointer; /*clicker som blir en hand när man klickar*/
+	cursor: pointer; /*clicker that becomes a hand when hovering over the cart icon*/
 }
 
 .logo img {
-  	height: 100px; /*justerar loggans höjd, behåller proportionerna*/
-  	width: auto; /*bredden anpassas automatiskt för att behålla bildens proportioner*/
-  	display: block; /*tar bort eventuella extra utrymmen under bilden som kan uppstå med inline-element*/
-  	position: absolute; /*för att kunna placera texten ovanpå bilden*/
-  	top: 50%; /*vertikal centrering*/
-  	left: 17%; /*horisontell centrering*/
-  	transform: translate(-50%, -50%); /*justerar positionen så att text
-en är exakt centrerad över bilden*/
+  	height: 70%; /*keeps the height of the logo image at 70% of its container to maintain a balanced look in the header*/
+  	width: auto; /*maintains the aspect ratio of the logo image to prevent distortion*/
+  	display: block; /*removes any extra space below the image that can occur with inline elements*/
+  	position: absolute;
+  	top: 50%; 
+  	left: 17%; 
+  	transform: translate(-50%, -50%); 
 }
 
 .hero {
-	display: grid; /*skapar en grid-layout för hero-sektionen*/
-	grid-template-columns: 2fr 1fr; /*huvudbilden tar upp mer plats än sidobilderna*/
-	gap: 40px; /*skapar utrymme mellan huvudbilden och sidobilderna*/
-	padding: 80px 10%; /*skapar utrymme runt hero-sektionen*/
+	display: grid; /*creates a grid layout for the hero section*/
+	grid-template-columns: 2fr 1fr; /*main picture and side pictures*/
+	gap: 10%; /*creates space between the main image and side images*/
+	padding: 15% 10%;
 	background-color: #f5f1ea; 
 }
 
-/*Stor huvudbild*/
 .hero-main {	
-	position: relative; /*för att kunna placera texten ovanpå bilden*/
+	position: relative; 
 }
 
 .hero-main img {
-	width: 100%; /*bilden tar upp hela bredden av sin container*/
+	width: 100%;
 	height: 100%;
-	object-fit: cover; /*ser till att bilden täcker hela området utan att förvrängas*/
-	border-radius: 20px; /*ger rundade hörn på bilden*/
+	object-fit: cover; /*ensures that the image covers the entire area without distortion*/
+	border-radius: 10%; /* rounder courners*/
 }
 
-/*text ovanpå bild*/
 .hero-overlay {
-	position: absolute; /*för att placera texten ovanpå bilden*/
-	bottom: 40px; /*placerar texten 40px från botten av bilden*/
-	left: 40px;
-	color: #5C3A32; /*mörkbrun text*/
+	position: absolute; 
+	bottom: 20%;
+	left: 20%;
+	color: #5C3A32; 
 }
 
-.hero-fullwidth .fullwidth-overlay {
-	position: relative; /*för att kunna placera texten ovanpå bilden*/
-	bottom: 200px; /*placerar texten 80px från botten av bilden*/
-	left: 100px;
-	font-size: 2rem;
-	color: #5C3A32; /*ljus beige text*/
-}
-
-.hero-overlay h2 { /*stil för texten ovanpå huvudbilden*/
+.hero-overlay h2 {
 	font-family: 'Playfair Display', serif;
 	font-size: 2.5rem;
-	letter-spacing: 3px;
-	margin: 0; /*tar bort standardmarginalen från h2-elementet*/
+	letter-spacing: 5%;
+	margin: 0; 
 }
-/*sidobilder*/
+
 .hero-side {
-	display: flex; /*skapar en flexbox-layout för sidobilderna*/
-	flex-direction: column; /*staplar sidobilderna vertikalt*/
-	gap: 40px; /*skapar utrymme mellan de två sidobilderna*/
+	display: flex; 
+	flex-direction: column; 
+	gap: 5%; 
 }
 .hero-side img {
 	width: 100%;
-	border-radius: 20px; /*ger rundade hörn på sidobilderna*/
-	object-fit: cover; /*ser till att bilderna täcker hela området utan att förvrängas*/
+	border-radius: 10%; 
+	object-fit: cover;
 }
 
-/*bild full bredd*/
+.hero-fullwidth .fullwidth-overlay {
+	position: relative;
+	bottom: 60%; 
+	left: 10%;
+	font-size: 2rem;
+	border-radius: 40%;
+	color: #5C3A32;
+
+}
+
 .hero-fullwidth img {
-	width: 80%; /*bilden tar upp hela bredden av sin container*/
-	height: 700px; /*sätter en fast höjd på bilden*/
-	image-orientation: center; /*centrerar bilden vertikalt inom sin container*/
-	object-fit: cover; /*ser till att bilden täcker hela området utan att förvrängas*/
-	margin-top: 0px; /*skapar utrymme mellan den fullbreddiga bilden och de andra bilderna i hero-sektionen*/
-	padding: 80px 10%; /*skapar utrymme runt hero-sektionen*/
-	background-color: #f5f1ea; 
+	width: 60%; 
+	height: 60%; 
+	object-fit: cover;
+	margin-top: 0%; 
+	padding: 10% 10%;
+	border-radius: 20%;
+	position: center;
 }
-
-/*trending page*/
 
 .trending-section {
-  	padding: 120px 10%; /*skapar utrymme runt sektionen*/
+  	padding: 20% 10%; 
   	background: #f5f1ea;
-  	text-align: center; /*centrerar texten i sektionen*/
+  	text-align: center; 
 }
 
 .section-title {
   	font-size: 3rem;
   	color: #5C3A32;
   	font-family: 'Playfair Display', serif;
-  	margin-bottom: 40px; /*skapar utrymme mellan titeln och innehållet i sektionen*/
+  	margin-bottom: 20%;
 }
 
 .slider {
   	position: relative; 
-  	overflow: hidden; /*ser till att bara en bild visas i taget*/
+  	overflow: hidden; /*only shows one image at a time*/
 }
 
 .slides {
   	display: flex;
-  	transition: transform 0.5s ease; /*smooth övergång mellan bilderna*/
+  	transition: transform 0.5s ease; /*smooth transition when sliding between images*/
 }
 
 .slide {
-  	min-width: 100%; /*varje bild tar upp hela bredden av slider-container*/
-  	position: relative; /*för att kunna placera texten ovanpå bilden*/
+  	min-width: 100%;
+  	position: relative;
 }
 
 .slide img {
   	width: 100%;
-  	border-radius: 20px;
-  	object-fit: cover; /*ser till att bilden täcker hela området utan att förvrängas*/
+  	border-radius: 5%;
+  	object-fit: cover;
 }
 
 .slide-caption {
   	position: absolute;
-  	bottom: 20px;
+  	bottom: 20%;
   	left: 50%;
-  	transform: translateX(-50%); /*centrerar texten horisontellt*/
+  	transform: translateX(-50%);
   	background: white;
   	color: #5C3A32;
   	font-family: 'Playfair Display', serif;
-  	padding: 10px 20px; /*skapar utrymme runt texten i caption*/
-  	border-radius: 10px; /*ger rundade hörn på caption*/
+  	padding: 5%; 
+  	border-radius: 10%; 
 }
 
 .prev, .next {
-  	position: absolute; /*för att placera knapparna ovanpå slider-container*/
-  	top: 50%; /*vertikal centrering av knapparna*/
+  	position: absolute;
+  	top: 50%;
   	transform: translateY(-50%);
   	background: #c9a227;
   	color: white;
-  	border: none; /*tar bort standardstilen på knapparna*/
-  	font-size: 24px; /*storlek på pilikonerna*/
-  	padding: 10px 15px; /*skapar utrymme runt pilikonerna*/
-  	cursor: pointer; /*clicker som blir en hand	när man klickar*/	
-  	border-radius: 50%; /*ger knapparna en cirkulär form*/
+  	border: none; /*remove default border*/
+  	font-size: 1.5rem;
+  	padding: 5%;
+  	cursor: pointer;
+  	border-radius: 50%;
 }
 
-.prev { left: 10px; } /*placerar vänsterknappen 10px från vänsterkanten av slider-container*/
-.next { right: 10px; } /*placerar högerknappen 10px från högerkanten av slider-container*/
+.prev { left: 10px; }
+.next { right: 10px; }
 
-.prev:hover, .next:hover { /*hover-effekt på knapparna*/
+.prev:hover, .next:hover {
   	background: #a17f1f;
 }
 
 .products-grid {
   	display: grid;
   	grid-template-columns: repeat(3, 1fr);
-  	gap: 40px;
-  	padding: 60px 10%;
+  	gap: 5%;
+  	padding: 20% 10%;
 }
 
 .products-card {
   	position: relative;
-  	border-radius: 15px;
+  	border-radius: 10%;
   	overflow: hidden;
   	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .products-card img {
-  	width: 100%; /*bilden tar upp hela bredden av sin container*/
-  	height: 300px; /*sätter en fast höjd på bilden för att skapa en enhetlig layout*/
-  	object-fit: cover; /*ser till att bilden täcker hela området utan att förvrängas*/
-  	transition: 0.6s ease; /*smooth hover-effekt*/
+  	width: 100%;
+  	height: 100%;
+  	object-fit: cover;
+  	transition: 0.6s ease; /
 }
 .products-card:hover img {
-  	transform: scale(1.05); /*zoomar in bilden något när man hover över kortet*/
+  	transform: scale(1.05); /*zoom in effect on hover*/
 }
 
-/* OVERLAY */
 .products-card .overlay {
-  	position: absolute; /*för att placera overlayen ovanpå bilden*/
-  	inset: 0; /*gör att overlayen täcker hela kortet*/
+  	position: absolute;
+  	inset: 0; 
 
   	background: linear-gradient(to top, 
     rgba(0,0,0,0.75),
     rgba(0,0,0,0.0)
-  	); /*skapar en gradient som går från svart till transparent för att ge en snygg effekt på texten*/	
+  	); /*creates a gradient overlay*/	
 
   	color: white;
 
@@ -232,16 +224,16 @@ en är exakt centrerad över bilden*/
   	transition: opacity 0.3s ease;
 }	
 .products-card:hover .overlay {
-  	opacity: 1; /*gör overlayen synlig när man hover över kortet*/
+  	opacity: 1;
 }
 
 .section-title{
-	display: flex; /*gör att h1 tar upp hela raden och inte delar utrymme med andra element*/
+	display: flex;
  	font-size: 2.5rem;
 	color: #5C3A32;
   	font-family: 'Playfair Display', serif;
   	margin-bottom: 5px;
-	justify-content: center; /*justerar titeln till mitten av sin grid-cell*/	
+	justify-content: center;
 }
 
 .price {
@@ -249,10 +241,9 @@ en är exakt centrerad över bilden*/
   	margin: 20px 0;
 }
 
-/*add to cart knapp*/
 .add-to-cart {
   	width: 80%; /*knappen tar upp 80% av bredden på overlayen*/
-	padding: 15px; /*skapar utrymme runt texten i knappen*/
+	padding: 5%; /*skapar utrymme runt texten i knappen*/
   	background-color: #c9a227;
   	border: none; /*tar bort standardstilen på knappen*/
   	border-radius: 8px; /*ger knappen rundade hörn*/
@@ -260,7 +251,7 @@ en är exakt centrerad över bilden*/
   	font-size: 1.1rem; /*storlek på texten i knappen*/
   	cursor: pointer; /*clicker som blir en hand när man klickar*/
   	transition: 0.3s; /*smooth hover-effekt*/
-	margin: 15px auto 0 auto; /*centering av knappen och skapar utrymme ovanför den*/
+	margin: 15% auto 0 auto; /*centering av knappen och skapar utrymme ovanför den*/
 	display: block; /*gör att knappen beter sig som ett blockelement för att kunna använda auto-marginaler för centering*/
 	align-items: center; /*vertikal centrering av texten i knappen*/
 	justify-content: center; /*horisontell centrering av texten i knappen*/
@@ -269,34 +260,33 @@ en är exakt centrerad över bilden*/
 .product-container {
   	display: grid;
   	grid-template-columns: 1fr 1fr;
-  	gap: 80px;
-  	padding: 100px 10%;
+  	gap: 10%;
+  	padding: 10% 10%;
   	align-items: center;
 }
 
 .product-image img {
   		width: 100%;
-  	border-radius: 20px;
+  	border-radius: 5%;
 }
 
 .product-info h1 {
   	font-size: 2.5rem;
-  	margin-bottom: 20px;
+  	margin-bottom: 5%;
 }
 
 .product-info .price {
   	font-size: 1.5rem;
-  	margin-bottom: 20px;
+  	margin-bottom: 5%;
 }
 
 .product-info .description {
-  	margin-bottom: 30px;
+  	margin-bottom: 10%;
   	line-height: 1.6;
 }
 
-/*cart page*/
 .cart-page {
-  	padding: 120px 10%; /*skapar utrymme runt varukorgssektionen*/
+  	padding: 120px 10%;
   	background-color: #f5f1ea;
 }
 
