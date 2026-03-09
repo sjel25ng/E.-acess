@@ -1,6 +1,4 @@
-/* =========================
-   SLIDER (säker version)
-========================= */
+/* slider */
 
 const slidesContainer = document.querySelector('.slides');
 const slideItems = document.querySelectorAll('.slide');
@@ -30,17 +28,10 @@ if (slidesContainer && nextBtn && prevBtn) {
 
 }
 
-
-/* =========================
-   CART SYSTEM
-========================= */
-
-// Hämta cart
+/*cart*/
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-
-/* ===== HEADER UPDATE ===== */
-
+/*header*/
 function updateCartCount() {
   const cartCount = document.getElementById("cart-count");
   if (!cartCount) return;
@@ -52,9 +43,7 @@ function updateCartCount() {
     `${itemCount} item${itemCount !== 1 ? "s" : ""} – $${total.toFixed(2)}`;
 }
 
-
-/* ===== ADD TO CART ===== */
-
+/*add to cart*/
 function addToCart(name, price) {
   const product = {
     name: name,
@@ -68,8 +57,6 @@ function addToCart(name, price) {
   displayCart();
 }
 
-
-// Add-to-cart knappar
 document.querySelectorAll(".add-to-cart").forEach(button => {
   button.addEventListener("click", () => {
     const name = button.dataset.name;
@@ -79,8 +66,6 @@ document.querySelectorAll(".add-to-cart").forEach(button => {
 });
 
 
-/* ===== DISPLAY CART PAGE ===== */
-
 function displayCart() {
   const cartItemsContainer = document.getElementById("cart-items");
   const totalContainer = document.getElementById("cart-total");
@@ -89,7 +74,7 @@ function displayCart() {
 
   cartItemsContainer.innerHTML = "";
 
-  // Gruppera produkter
+/*group items*/
 const grouped = {};
 
   cart.forEach(item => {
@@ -128,7 +113,7 @@ const grouped = {};
     totalContainer.textContent = total.toFixed(2);
   }
 
-  // Remove-knappar
+  /*remove from cart*/
   document.querySelectorAll(".remove-item").forEach(button => {
     button.addEventListener("click", () => {
       const name = button.dataset.name;
@@ -146,7 +131,7 @@ const grouped = {};
 }
 
 
-/* ===== CLEAR CART ===== */
+/*clear cart*/
 
 const clearBtn = document.getElementById("clear-cart");
 
@@ -158,9 +143,6 @@ if (clearBtn) {
     displayCart();
   });
 }
-
-
-/* ===== INIT ===== */
 
 updateCartCount();
 displayCart();
