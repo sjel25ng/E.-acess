@@ -242,19 +242,19 @@
 }
 
 .add-to-cart {
-  	width: 80%; /*knappen tar upp 80% av bredden på overlayen*/
-	padding: 5%; /*skapar utrymme runt texten i knappen*/
+  	width: 80%;
+	padding: 5%;
   	background-color: #c9a227;
-  	border: none; /*tar bort standardstilen på knappen*/
-  	border-radius: 8px; /*ger knappen rundade hörn*/
-	color: white; /*textfärg i knappen*/
-  	font-size: 1.1rem; /*storlek på texten i knappen*/
-  	cursor: pointer; /*clicker som blir en hand när man klickar*/
-  	transition: 0.3s; /*smooth hover-effekt*/
-	margin: 15% auto 0 auto; /*centering av knappen och skapar utrymme ovanför den*/
-	display: block; /*gör att knappen beter sig som ett blockelement för att kunna använda auto-marginaler för centering*/
-	align-items: center; /*vertikal centrering av texten i knappen*/
-	justify-content: center; /*horisontell centrering av texten i knappen*/
+  	border: none; /*removes default border from the button*/
+  	border-radius: 8px;
+	color: white;
+  	font-size: 1.1rem;
+  	cursor: pointer;
+  	transition: 0.3s;
+	margin: 15% auto 0 auto; 
+	display: block;
+	align-items: center;
+	justify-content: center;
 }
 
 .product-container {
@@ -286,27 +286,27 @@
 }
 
 .cart-page {
-  	padding: 120px 10%;
+  	padding: 20% 10%;
   	background-color: #f5f1ea;
 }
 
 .cart-item {
   	padding: 20px 0;
-  	border-bottom: 1px solid #ddd; /*skapar en linje mellan varje varukorgsartikel*/
-  	display: flex; /*skapar en flexbox-layout för varukorgsartiklarna*/
-  	justify-content: space-between; /*skapar utrymme mellan artikelinformationen och priset*/
-  	align-items: center; /*vertikal centrering av artikelinformationen och priset*/
+  	border-bottom: 1px solid #ddd;
+  	display: flex; 
+  	justify-content: space-between; 
+  	align-items: center; 
 }
 
 .cart-total {
-  	margin-top: 40px; /*skapar utrymme mellan varukorgsartiklarna och totalpriset*/
-  	text-align: right; /*justerar totalpriset till höger*/
-  	font-size: 1.5rem; /*storlek på totalpriset*/
-  	color: #5C3A32; /*mörkbrun text*/
+  	margin-top: 10%; 
+  	text-align: right; 
+  	font-size: 1.5rem; 
+  	color: #5C3A32;
 }
 
 .checkout-button {
-  	padding: 15px 40px;
+  	padding: 5% 10%;
   	background-color: #c9a227;
   	border: none;
   	color: white;
@@ -344,6 +344,6 @@ footer {
   	background: #111;
   	color: white;
   	text-align: center;
-  	padding: 20px;
-  	margin-top: 50px;
+  	padding: 5% 10%;
+  	margin-top: 30%;
 }
